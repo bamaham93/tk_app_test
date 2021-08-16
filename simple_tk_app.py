@@ -15,8 +15,7 @@ class Application(tk.Frame):
     
 
     def _create_widget_one(self):
-        label = tk.Label(root, text="Enter your name:")
-        label.pack()
+        tk.Label(root, text="Enter your name:").pack()
 
         name = tk.StringVar()
         name_box = tk.Entry(root, textvariable=name)
@@ -25,8 +24,7 @@ class Application(tk.Frame):
     
 
     def _create_widget_two(self):
-        submit = tk.Button(root, text="Submit", command=self.say_hello)
-        submit.pack()
+        tk.Button(root, text="Submit", command=self.say_hello).pack()
     
 
     def say_hello(self):
