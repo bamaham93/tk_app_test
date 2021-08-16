@@ -15,17 +15,29 @@ class Application(tk.Frame):
     
 
     def _create_widget_one(self):
-        pass
+        label = tk.Label(root, text="Enter your name:")
+        label.pack()
+
+        name = tk.StringVar()
+        name_box = tk.Entry(root, textvariable=name)
+        name_box.pack()
+        self.name = name
     
 
     def _create_widget_two(self):
-        pass
+        submit = tk.Button(root, text="Submit", command=self.say_hello)
+        submit.pack()
+    
+
+    def say_hello(self):
+        print(f'Hello, {self.name.get()}')  # must use .get method
     
 
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("My App")
-    photo = tk.PhotoImage(file="python3.jpeg", imgtype='.jpg')
-    tk.Label(root, image=photo, bg="black").pack()
+    root.minsize(300, 100)
+    # photo = tk.PhotoImage(file="python3.jpeg", imgtype='.jpg')
+    # tk.Label(root, image=photo, bg="black").pack()
     app = Application(master=root)
     app.mainloop()
